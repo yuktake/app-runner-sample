@@ -16,4 +16,28 @@ php composer-setup.php
 rm composer-setup.php
 
 # Install dependencies
-php composer.phar install
+# php composer.phar install
+
+composer --version
+yum install php-mbstring php-xml -y
+amazon-linux-extras install nginx1 -y
+composer install
+cp -p .env.example .env
+php artisan key:generate
+
+# ディレクトリの権限設定
+chown -R :nginx ./storage
+chown -R :nginx ./bootstrap/cache
+chown -R :nginx ./public
+
+find ./storage -type d -exec chmod 775 {} \;
+find ./storage -type f -exec chmod 664 {} \;
+
+find ./bootstrap/cache -type d -exec chmod 775 {} \;
+find ./bootstrap/cache -type f -exec chmod 664 {} \;
+
+find ./storage -type d -exec chmod g+s {} \;
+find ./bootstrap/cache -type d -exec chmod g+s {} \;
+
+setfacl -R -d -m g::rwx ./storage
+setfacl -R -d -m g::rwx ./bootstrap/cache
