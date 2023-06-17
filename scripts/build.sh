@@ -41,11 +41,3 @@ find ./bootstrap/cache -type d -exec chmod g+s {} \;
 
 setfacl -R -d -m g::rwx ./storage
 setfacl -R -d -m g::rwx ./bootstrap/cache
-
-# アプリケーションのログ出力先を設定
-ln -s /dev/stdout /var/log/nginx/error.log
-ln -s /dev/stdout /var/log/nginx/access.log
-
-ln -s /dev/stdout /var/log/php-fpm/error.log
-ln -s /dev/stdout /var/log/php-fpm/www-access.log
-ln -s /dev/stdout /var/log/php-fpm/www-error.log
