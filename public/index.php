@@ -44,12 +44,14 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+echo "Hello, App Runner PHP Managed Runtime!";
 
-$kernel = $app->make(Kernel::class);
+// $app = require_once __DIR__.'/../bootstrap/app.php';
 
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
+// $kernel = $app->make(Kernel::class);
 
-$kernel->terminate($request, $response);
+// $response = $kernel->handle(
+//     $request = Request::capture()
+// )->send();
+
+// $kernel->terminate($request, $response);
