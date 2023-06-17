@@ -2,7 +2,11 @@ version: 1.0
 runtime: php81
 build:
   commands:
+    pre-build:
+      - scripts/pre-build.sh
     build:
-      - echo example build command for PHP
+      - scripts/build.sh
+    post-build:
+      - scripts/post-build.sh
 run:
-  command: ./startup.sh
+  command: scripts/entrypoint.sh
