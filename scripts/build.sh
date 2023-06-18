@@ -29,15 +29,15 @@ chown -R :nginx ./storage
 chown -R :nginx ./bootstrap/cache
 chown -R :nginx ./public
 
-find ./storage -type d -exec chmod 775 {} \;
-find ./storage -type f -exec chmod 664 {} \;
-chmod -R 777 ./storage/logs
+# find ./storage -type d -exec chmod 775 {} \;
+# find ./storage -type f -exec chmod 664 {} \;
+chmod -R 777 ./storage
 
 find ./bootstrap/cache -type d -exec chmod 775 {} \;
 find ./bootstrap/cache -type f -exec chmod 664 {} \;
 
-find ./storage -type d -exec chmod g+s {} \;
+# find ./storage -type d -exec chmod g+s {} \;
 find ./bootstrap/cache -type d -exec chmod g+s {} \;
 
-setfacl -R -d -m g::rwx ./storage
+# setfacl -R -d -m g::rwx ./storage
 setfacl -R -d -m g::rwx ./bootstrap/cache
