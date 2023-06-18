@@ -16,7 +16,6 @@ php composer-setup.php
 rm composer-setup.php
 
 # Install dependencies
-# php composer.phar install
 
 composer --version
 yum install php-mbstring php-xml -y
@@ -27,6 +26,7 @@ php artisan key:generate
 
 # ディレクトリの権限設定
 chown -R :nginx ./storage
+chmod -R 777 ./storage
 chown -R :nginx ./bootstrap/cache
 chown -R :nginx ./public
 
