@@ -20,18 +20,18 @@ rm composer-setup.php
 composer --version
 yum install php-mbstring php-xml -y
 amazon-linux-extras install nginx1 -y
-composer install
+php composer.phar install
 cp -p .env.example .env
 php artisan key:generate
 
 # ディレクトリの権限設定
 chown -R :nginx ./storage
-chmod -R 777 ./storage
 chown -R :nginx ./bootstrap/cache
 chown -R :nginx ./public
 
 find ./storage -type d -exec chmod 775 {} \;
 find ./storage -type f -exec chmod 664 {} \;
+chmod -R 777 ./storage/logs
 
 find ./bootstrap/cache -type d -exec chmod 775 {} \;
 find ./bootstrap/cache -type f -exec chmod 664 {} \;
