@@ -11,7 +11,7 @@ class HomeController extends Controller {
         // foreach (User::all() as $user) {
         //     var_dump($user->name);
         // }
-        dd(DB::select("SHOW TABLES"));
+        dd(DB::raw("SHOW TABLES"));
 
         return view('welcome');
     }
