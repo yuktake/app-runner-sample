@@ -15,9 +15,9 @@ run:
     env: APP_PORT
   secrets:
     - name: DB_USERNAME
-      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:rds!db-df7fe548-e7e8-453c-b4ac-9a746e04e44f-53CPuZ:username::"
+      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:rds!db-cdb9cbc4-ffc4-4696-92da-97d1a9ca4bfe-t0EdIC:username::"
     - name: DB_PASSWORD
-      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:rds!db-df7fe548-e7e8-453c-b4ac-9a746e04e44f-53CPuZ:password::"
+      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:rds!db-cdb9cbc4-ffc4-4696-92da-97d1a9ca4bfe-t0EdIC:password::"
     - name: DB_DATABASE
       value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:app_runner_laravel-FyqCFp:database::"
     - name: DB_HOST
