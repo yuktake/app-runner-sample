@@ -8,6 +8,15 @@ build:
       - scripts/build.sh
     post-build:
       - scripts/post-build.sh
+  secrets:
+    - name: DB_USERNAME
+      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:rds!db-df7fe548-e7e8-453c-b4ac-9a746e04e44f-53CPuZ:username::"
+    - name: DB_PASSWORD
+      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:rds!db-df7fe548-e7e8-453c-b4ac-9a746e04e44f-53CPuZ:password::"
+    - name: DB_DATABASE
+      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:app_runner_laravel-FyqCFp:database::"
+    - name: DB_HOST
+      value-from: "arn:aws:secretsmanager:ap-northeast-1:159192932442:secret:app_runner_laravel-FyqCFp:host::"
 run:
   command: scripts/entrypoint.sh
   network:

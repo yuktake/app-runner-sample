@@ -2,4 +2,4 @@
 
 echo "post build"
 
-# php artisan migrate
+php artisan migrate
