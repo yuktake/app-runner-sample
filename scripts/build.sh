@@ -18,7 +18,7 @@ rm composer-setup.php
 # Install dependencies
 
 composer --version
-yum install php-mbstring php-xml -y
+yum install php-mbstring php-xml wget tar -y
 amazon-linux-extras install nginx1 -y
 php composer.phar install
 cp -p .env.example .env
