@@ -43,4 +43,4 @@ wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz
 mkdir phpmyadmin
 tar -xvzf phpMyAdmin-latest-all-languages.tar.gz -C phpmyadmin --strip-components 1
 rm phpMyAdmin-latest-all-languages.tar.gz
-ln -s  ./phpmyadmin ./app/public/phpmyadmin
+ln -s  ./phpmyadmin /app/public/phpmyadmin
