@@ -37,3 +37,8 @@ find ./bootstrap/cache -type f -exec chmod 664 {} \;
 find ./bootstrap/cache -type d -exec chmod g+s {} \;
 
 setfacl -R -d -m g::rwx ./bootstrap/cache
+
+cd ../
+wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz
+mkdir phpMyAdmin
+tar -xvzf phpMyAdmin-latest-all-languages.tar.gz -C phpMyAdmin --strip-components 1
