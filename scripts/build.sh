@@ -40,5 +40,7 @@ setfacl -R -d -m g::rwx ./bootstrap/cache
 
 cd ../
 wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz
-mkdir phpMyAdmin
-tar -xvzf phpMyAdmin-latest-all-languages.tar.gz -C phpMyAdmin --strip-components 1
+mkdir phpmyadmin
+tar -xvzf phpMyAdmin-latest-all-languages.tar.gz -C phpmyadmin --strip-components 1
+rm phpMyAdmin-latest-all-languages.tar.gz
+ls
